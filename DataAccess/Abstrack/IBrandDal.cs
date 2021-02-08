@@ -3,10 +3,11 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace DataAccess.Abstrack.InMemory
+namespace DataAccess.Abstrack
 {
-    public interface ICarDal:IEntityRepository<Car>
+    interface IBrandDal:IEntityRepository<Brand>
     {
-  
     }
+
+
 }
