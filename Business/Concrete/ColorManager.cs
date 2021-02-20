@@ -1,5 +1,8 @@
 ﻿using Business.Abstrack;
+using Business.Constants;
+using Core.Utilities.Results;
 using DataAccess.Abstrack;
+using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -10,14 +13,29 @@ namespace Business.Concrete
    public class ColorManager : IColorService
     {
         IColorDal _colorDal;
-        public List<Color> GetAll()
+
+        public ColorManager(EfColorDal colorDal)
         {
-            return _colorDal.GetAll();
+            _colorDal = colorDal;
         }
 
-        public Color GetByColorId(int colorId)
+        public IDataResult<List<Color>> GetAll()
         {
-            return _colorDal.Get(c => c.ColorId == colorId);
+            if (DateTime.Now.Hour == 17)
+            {
+                return new ErrorDataResult<List<Color>>(Messages.MaintanenceTime);
+            }
+            return new SuccessDataResult<List<Color>>(_colorDal.GetAll(), Messages.ColorListed);
+        }
+
+        public IDataResult<Color> GetByColorId(int colorId)
+        {
+            if (DateTime.Now.Hour == 22)
+            {
+                return new ErrorDataResult<Color>(Messages.MaintanenceTime);
+            }
+            
+            return new SuccessDataResult<Color>(_colorDal.Get(c => c.ColorId == colorId), Messages.ColorListedByColorId);
         }
     }
 }
