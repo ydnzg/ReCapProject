@@ -19,8 +19,8 @@ namespace Business.Concrete
 
         public IResult Add(Rental rental)
         {
-            var result = _rentalDal.Get(r=>r.ReturnDate != null);
-            if (result == null)
+            
+            if (rental.ReturnDate == null)
             {
                 return new ErrorResult(Messages.RentalAddedError);
             }
@@ -44,7 +44,7 @@ namespace Business.Concrete
 
         public IDataResult<List<Rental>> GetAll()
         {
-            if (DateTime.Now.Hour == 22)
+            if (DateTime.Now.Hour == 19)
             {
                 return new ErrorDataResult<List<Rental>>(Messages.MaintanenceTime);
             }

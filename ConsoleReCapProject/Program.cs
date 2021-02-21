@@ -171,6 +171,31 @@ namespace ConsoleReCapProject
 
             UserManager userManager = new UserManager(new EfUserDal());
 
+            //var result = userManager.GetAll();
+
+            //if (result.Success == true)
+            //{
+            //    foreach (var user in result.Data)
+            //    {
+
+
+            //          Console.WriteLine("user id = " + user.UserId + " / " +
+            //                  "firstname = " + user.FirstName + " / " +
+            //                  "lastname = " + user.LastName + " / " +
+            //                  "email = " + user.Email + " / " +
+            //                  "passworrd = " + user.Password);
+
+
+            //    }
+            //    Console.WriteLine(result.Message);
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
+
+
             User user1 = new User
             {
                 UserId = 1,
@@ -258,6 +283,29 @@ namespace ConsoleReCapProject
 
             CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
 
+            //var result = customerManager.GetAll();
+
+            //if (result.Success == true)
+            //{
+            //    foreach (var customer in result.Data)
+            //    {
+
+
+            //        Console.WriteLine("customer id = " + customer.CustomerId + " / " +
+            //                          "user id = " + customer.UserId + " / " +
+            //                          "company name = " + customer.CompanyName);
+
+
+            //    }
+            //    Console.WriteLine(result.Message);
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
+
+
             Customer customer1 = new Customer
             {
                 CustomerId=1,
@@ -320,6 +368,29 @@ namespace ConsoleReCapProject
             //customerManager.Delete(customer4);
 
             RentalManager rentalManager = new RentalManager(new EfRentalDal());
+
+            //var result = rentalManager.GetAll();
+
+            //if (result.Success == true)
+            //{
+            //    foreach (var rental in result.Data)
+            //    {
+
+            //        Console.WriteLine("rental id = " + rental.RentalId + " / " +
+            //                          "car id = " + rental.CarId + " / " +
+            //                          "customer id = " + rental.CustomerId + " / " +
+            //                          "rent date = " + rental.RentDate + " / " +
+            //                          "return date = " + rental.ReturnDate);
+
+
+            //    }
+            //    Console.WriteLine(result.Message);
+
+            //}
+            //else
+            //{
+            //    Console.WriteLine(result.Message);
+            //}
 
             Rental rental1 = new Rental
             {
@@ -398,7 +469,7 @@ namespace ConsoleReCapProject
             //rentalManager.Delete(rental2);
 
             //return date null ilse araba kiralanamaz
-            rentalManager.Add(rental5);
+            //rentalManager.Add(rental5);
            
 
         }
