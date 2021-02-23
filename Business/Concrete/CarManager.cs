@@ -27,7 +27,7 @@ namespace Business.Concrete
                 return new ErrorResult(Messages.CarNameInvalid);
             }
             _carDal.Add(car);
-            return new SuccessResult(Messages.CarSelected);
+            return new SuccessResult(Messages.CarAdded);
         }
 
         public IResult Delete(Car car)
@@ -56,7 +56,7 @@ namespace Business.Concrete
             {
                 return new ErrorDataResult<Car>();
             }
-            return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == carId));
+            return new SuccessDataResult<Car>(_carDal.Get(c => c.Id == carId),Messages.CarListedById);
         }
 
         public IDataResult<List<CarDetailDto>> GetCarDetails()

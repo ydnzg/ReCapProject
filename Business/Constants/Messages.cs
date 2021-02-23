@@ -6,7 +6,7 @@ namespace Business.Constants
 {
     public static class Messages
     {
-        public static string CarSelected = "Araba seçildi.";
+        public static string CarAdded = "Araba bilgileri eklendi.";
         public static string CarNameInvalid = "Araba ismi geçersiz";
         public static string CarUpdated = "Araba özellikleri güncellendi";
         public static string CarDeleted= "Silindi";
@@ -34,5 +34,6 @@ namespace Business.Constants
         public static string CustomerAdded = "Müşteri bilgileri Eklendi";
         public static string CustomerListed = "Müşteriler listelendi.";
         public static string CompanyNameInvalid = "Şirket adı özelliikleri uygun değil";
+        public static string CarListedById = "Idlerine göre arabalar listelendi.";
     }
 }
