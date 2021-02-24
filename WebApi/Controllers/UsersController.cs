@@ -11,29 +11,30 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class UsersController : ControllerBase
     {
-        ICustomerService _customerService;
-        public CustomersController(ICustomerService customerService)
+        IUserService _userService;
+        public UsersController(IUserService userService)
         {
-            _customerService = customerService;
+            _userService = userService;
         }
 
         [HttpGet("getall")]
 
         public ActionResult GetAll()
         {
-            var result = _customerService.GetAll();
+            var result = _userService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
         [HttpPost("add")]
-        public ActionResult Add(Customer customer)
+        public ActionResult Add(User user)
         {
-            var result = _customerService.Add(customer);
+            var result = _userService.Add(user);
             if (result.Success)
             {
                 return Ok(result);
@@ -42,9 +43,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("update")]
-        public ActionResult Update(Customer customer)
+        public ActionResult Update(User user)
         {
-            var result = _customerService.Update(customer);
+            var result = _userService.Update(user);
             if (result.Success)
             {
                 return Ok(result);
@@ -52,10 +53,11 @@ namespace WebApi.Controllers
             return BadRequest(result);
         }
 
+
         [HttpPost("delete")]
-        public ActionResult Delete(Customer customer)
+        public ActionResult Delete(User user)
         {
-            var result = _customerService.Delete(customer);
+            var result = _userService.Delete(user);
             if (result.Success)
             {
                 return Ok(result);
@@ -64,14 +66,15 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("getbyid")]
-        public ActionResult GetById(int customerId)
+        public ActionResult GetById(int userId)
         {
-            var result = _customerService.GetCustomerByCustomerId(2);
+            var result = _userService.GetUsersByUserId(4);
             if (result.Success)
             {
                 return Ok(result);
             }
             return BadRequest(result);
         }
+
     }
 }

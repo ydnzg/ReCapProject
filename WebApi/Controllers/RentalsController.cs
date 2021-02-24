@@ -11,19 +11,19 @@ namespace WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CustomersController : ControllerBase
+    public class RentalsController : ControllerBase
     {
-        ICustomerService _customerService;
-        public CustomersController(ICustomerService customerService)
+        IRentalService _rentalService;
+        public RentalsController(IRentalService rentalService)
         {
-            _customerService = customerService;
+            _rentalService = rentalService;
         }
 
         [HttpGet("getall")]
 
         public ActionResult GetAll()
         {
-            var result = _customerService.GetAll();
+            var result = _rentalService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -31,9 +31,9 @@ namespace WebApi.Controllers
             return BadRequest(result);
         }
         [HttpPost("add")]
-        public ActionResult Add(Customer customer)
+        public ActionResult Add(Rental rental)
         {
-            var result = _customerService.Add(customer);
+            var result = _rentalService.Add(rental);
             if (result.Success)
             {
                 return Ok(result);
@@ -42,9 +42,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("update")]
-        public ActionResult Update(Customer customer)
+        public ActionResult Update(Rental rental)
         {
-            var result = _customerService.Update(customer);
+            var result = _rentalService.Update(rental);
             if (result.Success)
             {
                 return Ok(result);
@@ -53,9 +53,9 @@ namespace WebApi.Controllers
         }
 
         [HttpPost("delete")]
-        public ActionResult Delete(Customer customer)
+        public ActionResult Delete(Rental rental)
         {
-            var result = _customerService.Delete(customer);
+            var result = _rentalService.Delete(rental);
             if (result.Success)
             {
                 return Ok(result);
@@ -63,10 +63,11 @@ namespace WebApi.Controllers
             return BadRequest(result);
         }
 
+
         [HttpGet("getbyid")]
-        public ActionResult GetById(int customerId)
+        public ActionResult GetById(int rentalId)
         {
-            var result = _customerService.GetCustomerByCustomerId(2);
+            var result = _rentalService.GetRentalByRentalId(2);
             if (result.Success)
             {
                 return Ok(result);
