@@ -35,5 +35,6 @@ namespace Business.Constants
         public static string CustomerListed = "Müşteriler listelendi.";
         public static string CompanyNameInvalid = "Şirket adı özelliikleri uygun değil";
         public static string CarListedById = "Idlerine göre arabalar listelendi.";
+        public static string DailyPriceInvalid = "Kiralama ücreti geçersiz";
     }
 }
