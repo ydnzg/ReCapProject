@@ -1,7 +1,6 @@
 using Business.Abstrack;
 using Business.Concrete;
 using DataAccess.Abstrack;
-using DataAccess.Abstrack.InMemory;
 using DataAccess.Concrete.EntityFramework;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -61,7 +60,11 @@ namespace WebApi
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseAuthorization();
 
@@ -70,5 +73,7 @@ namespace WebApi
                 endpoints.MapControllers();
             });
         }
+
+
     }
 }
