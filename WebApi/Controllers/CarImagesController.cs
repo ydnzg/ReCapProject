@@ -29,5 +29,55 @@ namespace WebApi.Controllers
             }
             return BadRequest(result);
         }
+
+        [HttpPost("update")]
+
+        public IActionResult Update([FromForm(Name =("Image"))] IFormFile file,[FromForm(Name =("Id"))] int carImageId)
+        {
+            var ImageId = _carImageService.GetById(carImageId).Data;
+            var result = _carImageService.Update(file, ImageId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("delete")]
+        public IActionResult Delete([FromForm(Name =("Id"))] int carImageId)
+        {
+            var Id = _carImageService.GetById(carImageId).Data;
+            var result = _carImageService.Delete(Id);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpGet("getall")]
+
+        public IActionResult GetAll()
+        {
+            var result = _carImageService.GetAll();
+            if (result.Success)
+            {
+               return Ok(result);
+            }
+            return BadRequest(result);
+        }
+
+        [HttpPost("getbycarid")]
+        public IActionResult GetByCarId([FromForm(Name =("CarId"))] int carId)
+        {
+
+            var result = _carImageService.GetImagesByCarId(carId);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+
+            return BadRequest(result);
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Business.Abstrack;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities.Helper;
 using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
@@ -20,6 +22,7 @@ namespace Business.Concrete
             _carImageDal = carImageDal;
         }
         
+        [ValidationAspect(typeof(CarImageValidator))]
         public IResult Add(IFormFile file, CarImage carImage)
         {
             carImage.ImagePath = FileHelper.Add(file);
@@ -42,7 +45,7 @@ namespace Business.Concrete
 
         public IDataResult<CarImage> GetById(int carImageId)
         {
-            return new SuccessDataResult<CarImage>(_carImageDal.Get(p => p.Id == carImageId));
+            return new SuccessDataResult<CarImage>(_carImageDal.Get(c => c.Id == carImageId));
         }
 
         public IDataResult<List<CarImage>> GetImagesByCarId(int carId)
