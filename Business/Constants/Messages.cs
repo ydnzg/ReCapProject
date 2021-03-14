@@ -36,5 +36,7 @@ namespace Business.Constants
         public static string CompanyNameInvalid = "Şirket adı özelliikleri uygun değil";
         public static string CarListedById = "Idlerine göre arabalar listelendi.";
         public static string DailyPriceInvalid = "Kiralama ücreti geçersiz";
+        public static string ImageLimitExceeded = "Araba fotoğraf limiti dolu, yeni fotoğraf eklenemez";
+        
     }
 }
