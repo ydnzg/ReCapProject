@@ -38,6 +38,14 @@ namespace Business.Constants
         public static string DailyPriceInvalid = "Kiralama ücreti geçersiz";
         public static string ImageLimitExceeded = "Araba fotoğraf limiti dolu, yeni fotoğraf eklenemez";
         public static string AuthorizationDenied = "Yetkiniz yok";
+        public static string UserRegistered = "Kayıt oldu";
+        public static string UserNotFound = "Kullanıcı bulunamadı";
+        public static string PasswordError = "Parola Hatası";
+        public static string SuccessfulLogin = "Başarılı giriş";
+        public static string UserAlreadyExists = "Bu kullanıcı zaten mevcut";
+        public static string AccessTokenCreated = "Access token başarıyla oluşturuldu";
+
+
 
     }
 }

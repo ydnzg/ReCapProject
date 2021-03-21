@@ -1,6 +1,4 @@
-﻿using Core.Utilities.Results;
-using Core.Utilities.Results.Abstract;
-using Entities.Concrete;
+﻿using Core.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -9,12 +7,8 @@ namespace Business.Abstrack
 {
     public interface IUserService
     {
-        IDataResult<List<User>> GetAll();
-        IDataResult<User> GetUsersByUserId(int userId);
-        IResult Add(User user);
-        IResult Update(User user);
-        IResult Delete(User user);
-
-
+        List<OperationClaim> GetClaims(User user);
+        void Add(User user);
+        User GetByMail(string email);
     }
 }

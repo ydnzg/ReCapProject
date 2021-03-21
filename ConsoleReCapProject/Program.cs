@@ -1,5 +1,6 @@
 ﻿
 using Business.Concrete;
+using Core.Entities.Concrete;
 using DataAccess.Concrete;
 using DataAccess.Concrete.EntityFramework;
 using Entities.Concrete;
@@ -169,7 +170,7 @@ namespace ConsoleReCapProject
             //    Console.WriteLine(result1.Message);
             //}
 
-            UserManager userManager = new UserManager(new EfUserDal());
+            //UserManager userManager = new UserManager(new EfUserDal());
 
             //var result = userManager.GetAll();
 

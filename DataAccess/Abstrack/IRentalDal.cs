@@ -1,4 +1,5 @@
-﻿using Core.DataAccess;
+﻿
+using Core.DataAccess;
 using Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Text;
 
 namespace DataAccess.Abstrack
 {
-    public interface IRentalDal:IEntityRepository<Rental>
+    public interface IRentalDal : IEntityRepository<Rental>
     {
 
     }

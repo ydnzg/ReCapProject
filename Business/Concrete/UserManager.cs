@@ -1,10 +1,6 @@
 ﻿using Business.Abstrack;
-using Business.Constants;
-using Core.Utilities.Results;
-using Core.Utilities.Results.Abstract;
-using Core.Utilities.Results.Concrete;
-using DataAccess.Abstrack;
-using Entities.Concrete;
+using Core.Entities.Concrete;
+using DataAccess.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -19,52 +15,20 @@ namespace Business.Concrete
         {
             _userDal = userDal;
         }
-        public IResult Add(User user)
+
+        public List<OperationClaim> GetClaims(User user)
         {
-            if (user.Password.Length < 2)
-            {
-                return new ErrorResult(Messages.PasswordInvalid);
-            }
+            return _userDal.GetClaims(user);
+        }
+
+        public void Add(User user)
+        {
             _userDal.Add(user);
-            return new SuccessResult(Messages.UserAdded);
         }
 
-        public IResult Delete(User user)
+        public User GetByMail(string email)
         {
-            if (user.Password.Length < 2)
-            {
-                return new ErrorResult(Messages.PasswordInvalid);
-            }
-            _userDal.Delete(user);
-            return new SuccessResult(Messages.UserDeleted);
-        }
-
-        public IDataResult<List<User>> GetAll()
-        {
-            if (DateTime.Now.Hour == 23)
-            {
-                return new ErrorDataResult<List<User>>(Messages.MaintanenceTime);
-            }
-            return new SuccessDataResult<List<User>>(_userDal.GetAll(), Messages.UserListed);
-        }
-
-        public IDataResult<User> GetUsersByUserId(int userId)
-        {
-            if (DateTime.Now.Hour == 22)
-            {
-                return new ErrorDataResult<User>();
-            }
-            return new SuccessDataResult<User>(_userDal.Get(u => u.UserId == userId));
-        }
-
-        public IResult Update(User user)
-        {
-            if (user.Password.Length < 2)
-            {
-                return new ErrorResult(Messages.PasswordInvalid);
-            }
-            _userDal.Update(user);
-            return new SuccessResult(Messages.UserUpdated);
+            return _userDal.Get(u => u.Email == email);
         }
     }
 }
