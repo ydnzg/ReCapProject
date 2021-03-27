@@ -20,5 +20,7 @@ namespace Business.Abstrack
         IResult Delete(Car car);
 
         IDataResult<List<CarDetailDto>> GetCarDetails();
+
+        IResult AddTransactionTest(Car car);
     }
 }

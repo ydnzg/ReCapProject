@@ -197,55 +197,55 @@ namespace ConsoleReCapProject
             //}
 
 
-            User user1 = new User
-            {
-                UserId = 1,
-                FirstName = "İsmet",
-                LastName = "Kara",
-                Email = "i.kara@gmail.com",
-                Password="Ismet.12"
-            };
+            //User user1 = new User
+            //{
+            //    UserId = 1,
+            //    FirstName = "İsmet",
+            //    LastName = "Kara",
+            //    Email = "i.kara@gmail.com",
+            //    Password="Ismet.12"
+            //};
 
-            User user2 = new User
-            {
-                UserId = 2,
-                FirstName = "Ece",
-                LastName = "Çakır",
-                Email = "cakirece@gmail.com",
-                Password = "Ece_c4"
-            };
-            User user3 = new User
-            {
-                UserId = 3,
-                FirstName = "Rasim",
-                LastName = "Helva",
-                Email = "rassim@gmail.com",
-                Password = "Helva.123"
-            };
-            User user4 = new User
-            {
-                UserId = 4,
-                FirstName = "Seçkin",
-                LastName = "Tutuk",
-                Email = "tttutuk@gmail.com",
-                Password = "123456"
-            };
-            User user5 = new User
-            {
-                UserId = 5,
-                FirstName = "Banu",
-                LastName = "Mavi",
-                Email = "mavibanu@gmail.com",
-                Password = "Mavi.543"
-            };
-            User user6 = new User
-            {
-                UserId = 5,
-                FirstName = "Banu",
-                LastName = "Mavi",
-                Email = "b.mavi@gmail.com",
-                Password = "Banu.12345"
-            };
+            //User user2 = new User
+            //{
+            //    UserId = 2,
+            //    FirstName = "Ece",
+            //    LastName = "Çakır",
+            //    Email = "cakirece@gmail.com",
+            //    Password = "Ece_c4"
+            //};
+            //User user3 = new User
+            //{
+            //    UserId = 3,
+            //    FirstName = "Rasim",
+            //    LastName = "Helva",
+            //    Email = "rassim@gmail.com",
+            //    Password = "Helva.123"
+            //};
+            //User user4 = new User
+            //{
+            //    UserId = 4,
+            //    FirstName = "Seçkin",
+            //    LastName = "Tutuk",
+            //    Email = "tttutuk@gmail.com",
+            //    Password = "123456"
+            //};
+            //User user5 = new User
+            //{
+            //    UserId = 5,
+            //    FirstName = "Banu",
+            //    LastName = "Mavi",
+            //    Email = "mavibanu@gmail.com",
+            //    Password = "Mavi.543"
+            //};
+            //User user6 = new User
+            //{
+            //    UserId = 5,
+            //    FirstName = "Banu",
+            //    LastName = "Mavi",
+            //    Email = "b.mavi@gmail.com",
+            //    Password = "Banu.12345"
+            //};
 
             //**İLK 5 KULLANICIYI EKLE, 6. KULLANICIYI GÜNCELLEME İÇİN KULLAN , 1. KULLANICIYI SİL
             //userManager.Add(user1);
