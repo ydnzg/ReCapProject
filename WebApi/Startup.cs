@@ -1,6 +1,7 @@
 using Business.Abstrack;
 using Business.Concrete;
-using Core.DependencyResolver;
+
+using Core.DependencyResolvers;
 using Core.Extensions;
 using Core.Utilities.IoC;
 using Core.Utilities.Security.Encryption;

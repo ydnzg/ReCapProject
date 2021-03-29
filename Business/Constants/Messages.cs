@@ -13,6 +13,7 @@ namespace Business.Constants
         public static string MaintanenceTime = "Sistem bakımda";
         public static string CarListed = "Arabalar listelendi.";
         public static string CarDetailsListed = "Arabaların özellikleri listelendi.";
+        public static string RentalDetailsListed = "Kiralama bilgileri listelendi.";
         public static string ColorListed = "Arabaların renkleri listelendi.";
         public static string ColorListedByColorId = "Arabaların renkleri renk idlerine göre listelendi.";
         public static string BrandListed = "Arabaların markaları listelendi.";

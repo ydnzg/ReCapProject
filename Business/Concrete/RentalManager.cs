@@ -5,6 +5,7 @@ using Core.Utilities.Results.Abstract;
 using Core.Utilities.Results.Concrete;
 using DataAccess.Abstrack;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -60,6 +61,15 @@ namespace Business.Concrete
                 return new ErrorDataResult<Rental>();
             }
             return new SuccessDataResult<Rental>(_rentalDal.Get(r => r.RentalId == rentalId));
+        }
+
+        public IDataResult<List<RentalDetailDto>> GetRentalDetails()
+        {
+            if (DateTime.Now.Hour == 20)
+            {
+                return new ErrorDataResult<List<RentalDetailDto>>(Messages.MaintanenceTime);
+            }
+            return new SuccessDataResult<List<RentalDetailDto>>(_rentalDal.GetRentalDetails(), Messages.RentalDetailsListed);
         }
 
         public IResult Update(Rental rental)
